@@ -1,5 +1,50 @@
-<script setup></script>
+<script setup>
+import { onMounted, ref } from 'vue'
+import useApi from '@/composables/useApi'
+
+const api = useApi()
+const categories = ref([])
+onMounted(async () => {
+  categories.value = await api.getCategories()
+})
+</script>
 
 <template>
-  <h1 class="text-6xl font-thin text-slate-800">I'm Home Page</h1>
+  <div class="brand">
+    <img class="logo" src="logo.svg" alt="logo" />
+    <h1 class="title">Triviantastic</h1>
+    <img class="logo" src="logo.svg" alt="logo" />
+  </div>
+  <div class="categories">
+    <RouterLink
+      v-for="category in categories"
+      :key="category.id"
+      :to="`/question/category/${category.id}`"
+      class="category"
+    >
+      {{ category.name }}
+    </RouterLink>
+  </div>
 </template>
+
+<style lang="postcss" scoped>
+.brand {
+  @apply flex items-center justify-center gap-4;
+  & .logo {
+    @apply h-16 w-16;
+  }
+  & .title {
+    @apply text-6xl font-thin uppercase tracking-widest text-blue-500;
+  }
+}
+.categories {
+  @apply grid flex-grow grid-cols-8 gap-12;
+  & .category {
+    @apply flex h-32 w-40 items-center justify-center rounded-lg border-4 border-pink-300 py-4 text-center font-bold uppercase text-slate-600 transition-colors duration-300;
+
+    &:hover {
+      @apply cursor-pointer border-blue-600 bg-blue-300 text-black;
+    }
+  }
+}
+</style>
