@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import useApi from '@/composables/useApi'
+import useAPI from '@/composables/useAPI'
 
-const api = useApi()
+const api = useAPI()
 const categories = ref([])
 onMounted(async () => {
   categories.value = await api.getCategories()
@@ -40,10 +40,10 @@ onMounted(async () => {
 .categories {
   @apply grid flex-grow grid-cols-8 gap-12;
   & .category {
-    @apply flex h-32 w-40 items-center justify-center rounded-lg border-4 border-pink-300 py-4 text-center font-bold uppercase text-slate-600 transition-colors duration-300;
+    @apply flex h-32 w-40 items-center justify-center rounded-lg border-4 border-pink-900 py-4 text-center font-bold uppercase text-slate-600 transition-colors duration-300;
 
     &:hover {
-      @apply cursor-pointer border-blue-600 bg-blue-300 text-black;
+      @apply cursor-pointer border-blue-600 bg-blue-500 text-black;
     }
   }
 }

@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const instance = axios.create( config: {
+const instance = axios.create({
   baseURL: 'https://opentdb.com/',
 })
 
-export default function useApi() {
+export default function useAPI() {
   const getCategories = async () => {
     const response = await instance.get('api_category.php')
     return response.data.trivia_categories
