@@ -12,16 +12,16 @@
 
 <style lang="postcss" scoped>
 .brand {
-  @apply flex items-center justify-center gap-4;
+  @apply flex items-center justify-center gap-2;
   & .logo {
-    @apply h-16 w-16;
+    @apply h-12 w-12;
   }
 
   & :slotted(img) {
     @apply h-16 w-16;
   }
   & .title {
-    @apply text-6xl font-thin uppercase tracking-widest text-blue-500;
+    @apply text-center text-6xl font-thin uppercase tracking-widest text-blue-500;
   }
 }
 </style>

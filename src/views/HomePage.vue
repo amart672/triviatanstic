@@ -32,9 +32,9 @@ onMounted(async () => {
 
 <style lang="postcss" scoped>
 .categories {
-  @apply grid flex-grow grid-cols-8 gap-12;
+  @apply grid flex-grow grid-cols-8 gap-8;
   & .category {
-    @apply flex h-32 w-40 items-center justify-center rounded-lg border-4 border-pink-900 py-4 text-center font-bold uppercase text-slate-600 transition-colors duration-300;
+    @apply flex h-32 w-40 items-center justify-center rounded-lg border-4 border-pink-900 py-4 text-center font-thin uppercase text-slate-800 transition-colors duration-300;
 
     &:hover {
       @apply cursor-pointer border-blue-600 bg-blue-500 text-black;
