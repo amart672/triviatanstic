@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import useAPI from '@/composables/useAPI'
 import BaseTitle from '@/components/BaseTitle.vue'
+
 const { categories, getCategories } = useAPI()
 onMounted(async () => {
   await getCategories()
