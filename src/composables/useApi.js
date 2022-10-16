@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { ref } from 'vue'
+import axios from 'axios'
 
 const instance = axios.create({
   baseURL: 'https://opentdb.com/',
