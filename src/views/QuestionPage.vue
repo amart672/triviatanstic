@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { shuffle } from 'lodash-es'
-import useAPI from '@/composables/useAPI'
+import useAPI from '@/composables/useApi'
 import useColor from '@/composables/useColor'
 import BaseTitle from '@/components/BaseTitle.vue'
 import useScore from '@/composables/useScore'
